@@ -16,6 +16,13 @@
 		A07A1F0624B715280057A62D /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F0524B715280057A62D /* ProfileModel.swift */; };
 		A07A1F0824B7156A0057A62D /* CreatingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F0724B7156A0057A62D /* CreatingProfileViewController.swift */; };
 		A07A1F0A24B715AF0057A62D /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F0924B715AF0057A62D /* CustomAlert.swift */; };
+		A07A1F0D24B717130057A62D /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F0C24B717130057A62D /* CardsTableViewController.swift */; };
+		A07A1F0F24B717740057A62D /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F0E24B717740057A62D /* CardModel.swift */; };
+		A07A1F1124B718130057A62D /* PocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F1024B718130057A62D /* PocketCell.swift */; };
+		A07A1F1424B718860057A62D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F1324B718860057A62D /* CoreDataManager.swift */; };
+		A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A092844E24B8C5A500DFC06B /* CoreDataModel.xcdatamodeld */; };
+		A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */; };
+		A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,13 @@
 		A07A1F0524B715280057A62D /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		A07A1F0724B7156A0057A62D /* CreatingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingProfileViewController.swift; sourceTree = "<group>"; };
 		A07A1F0924B715AF0057A62D /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		A07A1F0C24B717130057A62D /* CardsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
+		A07A1F0E24B717740057A62D /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		A07A1F1024B718130057A62D /* PocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCell.swift; sourceTree = "<group>"; };
+		A07A1F1324B718860057A62D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A092844F24B8C5A500DFC06B /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,7 @@
 				A07A1EFD24B713DB0057A62D /* Common */,
 				A07A1EFE24B713F40057A62D /* Resources */,
 				A07A1EFF24B7144F0057A62D /* Autorization */,
+				A07A1F0B24B716A10057A62D /* TableView */,
 				A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */,
 				A07A1EF124B7114A0057A62D /* Info.plist */,
 			);
@@ -83,6 +98,7 @@
 		A07A1EFD24B713DB0057A62D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A07A1F1224B718560057A62D /* Core Data */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -91,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				A07A1EEC24B7114A0057A62D /* Assets.xcassets */,
+				A092844E24B8C5A500DFC06B /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -129,6 +146,26 @@
 				A07A1F0524B715280057A62D /* ProfileModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A07A1F0B24B716A10057A62D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A07A1F0C24B717130057A62D /* CardsTableViewController.swift */,
+				A07A1F0E24B717740057A62D /* CardModel.swift */,
+				A07A1F1024B718130057A62D /* PocketCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		A07A1F1224B718560057A62D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				A07A1F1324B718860057A62D /* CoreDataManager.swift */,
+				A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */,
+				A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,10 +246,17 @@
 			files = (
 				A07A1F0424B714F30057A62D /* LabelForProfile.swift in Sources */,
 				A07A1F0824B7156A0057A62D /* CreatingProfileViewController.swift in Sources */,
+				A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */,
+				A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */,
+				A07A1F1124B718130057A62D /* PocketCell.swift in Sources */,
 				A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */,
 				A07A1F0A24B715AF0057A62D /* CustomAlert.swift in Sources */,
+				A07A1F0D24B717130057A62D /* CardsTableViewController.swift in Sources */,
+				A07A1F0F24B717740057A62D /* CardModel.swift in Sources */,
 				A07A1EFB24B712760057A62D /* StartViewController.swift in Sources */,
+				A07A1F1424B718860057A62D /* CoreDataManager.swift in Sources */,
 				A07A1F0624B715280057A62D /* ProfileModel.swift in Sources */,
+				A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT8GFFBM5U;
 				INFOPLIST_FILE = BusinessCardsBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = my.company.BusinessCardsBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikolaypadhaiskyApp.BusinessCardsBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -366,12 +411,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT8GFFBM5U;
 				INFOPLIST_FILE = BusinessCardsBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = my.company.BusinessCardsBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikolaypadhaiskyApp.BusinessCardsBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -419,6 +465,20 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A092844E24B8C5A500DFC06B /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A092844F24B8C5A500DFC06B /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = A092844F24B8C5A500DFC06B /* CoreDataModel.xcdatamodel */;
+			name = CoreDataModel.xcdatamodeld;
+			path = ../../CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A07A1ED824B711470057A62D /* Project object */;
 }
