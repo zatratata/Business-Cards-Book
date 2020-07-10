@@ -21,8 +21,8 @@ class CardsTableViewController: UIViewController {
 
     private let barTitle: String = "Card book"
 
-    var cardsModel: [CardModel] = []
-    var filteredModel: [CardModel] = []
+    var cardsModel: [CardModel]?
+    var filteredModel: [CardModel]?
 
     private lazy var searchLine: UISearchBar = {
         let search = UISearchBar()
@@ -35,6 +35,7 @@ class CardsTableViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let table = UITableView()
+        table.backgroundColor = .black
         table.separatorStyle = .none
         table.delegate = self
         table.dataSource = self
@@ -46,6 +47,10 @@ class CardsTableViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(self.appMovedToBackground),
+                                       name: UIApplication.willResignActiveNotification, object: nil)
 
         self.filteredModel = self.cardsModel
 
@@ -95,13 +100,18 @@ class CardsTableViewController: UIViewController {
         self.present(nextVC, animated: true, completion: nil)
     }
 
+    // MARK: Actions
+    @objc private func appMovedToBackground() {
+        CoreDataManager.shared.saveContext()
+    }
 }
 
 // MARK: - Extension table view
 
 extension CardsTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.filteredModel.count
+        guard let numberOfElementsInModel = self.filteredModel?.count else { return 5 }
+        return numberOfElementsInModel > 5 ? numberOfElementsInModel : 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,10 +120,14 @@ extension CardsTableViewController: UITableViewDataSource, UITableViewDelegate {
                                                  for: indexPath) as? PocketCell
         guard let pocketCell = cell else { return UITableViewCell() }
 
-        let card = self.filteredModel[indexPath.row].getImage() ?? UIImage()
+        if indexPath.row < self.filteredModel?.count ?? 0 {
+        let card = self.filteredModel?[indexPath.row].getImage() ?? UIImage()
         pocketCell.setCardView(withImage: card)
-
-        return pocketCell
+            return pocketCell
+        } else {
+            pocketCell.setCardView(withImage: UIImage())
+            return pocketCell
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,35 +136,25 @@ extension CardsTableViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-//        let url =
-//
-//        self.selectedCardFrame = tableView.cellForRow(at: indexPath)?.frame ?? CGRect()
-//        self.selectedCardFrame.origin.y += self.tableView.frame.origin.y
-//        self.transitionManager.pocketFrame = self.selectedCardFrame
-//
-//        self.transitionManager.cardImage = (tableView.cellForRow(at: indexPath) as? PocketCell)?.cardView ?? UIImageView()
-//        self.transitionManager.cardImage?.frame.origin.y += self.selectedCardFrame.origin.y
-//
-//        print("Pocket: \(self.transitionManager.pocketFrame), card: \(self.transitionManager.cardImage?.frame)")
+        if indexPath.row < self.filteredModel?.count ?? 0 {
 
         let nextViewController = PresentCardInformationVC()
-        nextViewController.card = self.cardsModel[indexPath.row]
+        nextViewController.card = self.filteredModel?[indexPath.row]
 
         nextViewController.modalTransitionStyle = .coverVertical
         nextViewController.modalPresentationStyle = .popover
-        self.navigationController?.present(nextViewController, animated: true, completion: nil)
-//        self.present(nextViewController, animated: true, completion: nil)
-//
-//        nextViewController.transitioningDelegate = transitionManager
-//        nextViewController.modalPresentationStyle = .custom
-//        self.present(nextViewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
 }
 
 extension CardsTableViewController: CardsTableViewControllerDelegate {
     func updateModel(withCard card: CardModel) {
 
-        self.cardsModel.insert(card, at: 0)
+        if self.cardsModel == nil {
+            self.cardsModel = []
+        }
+        self.cardsModel?.insert(card, at: 0)
         self.filteredModel = self.cardsModel
         self.tableView.reloadData()
     }
@@ -162,7 +166,7 @@ extension CardsTableViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             self.filteredModel = self.cardsModel
         } else {
-        self.filteredModel = self.cardsModel.filter {
+            self.filteredModel = self.cardsModel?.filter {
             ($0.name.lowercased()).contains(searchText.lowercased())
             }
         }

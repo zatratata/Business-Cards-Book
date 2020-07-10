@@ -14,7 +14,7 @@ class PresentCardInformationVC: UIViewController {
     var card: CardModel?
 
     // MARK: GUI
-    private lazy var backgroundImageView = YellowBackgroundImageView()
+    private lazy var backgroundImageView = BackgroundImageView()
 
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView(frame: .zero)
@@ -200,10 +200,6 @@ class PresentCardInformationVC: UIViewController {
 
         guard let siteString = self.webSiteLabel.text else { return }
         let url = URL(string: "http://" + siteString)
-        //        let path = "http://maps.apple.com/?q=" // 1
-        //        let searchQuerry = textField.text!.addingPercentEncoding(
-//        withAllowedCharacters: NSCharacterSet.urlQueryAllowed)! // 2
-        //        let url = URL(string: path+searchQuerry)! // 3
         if let url = url {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }

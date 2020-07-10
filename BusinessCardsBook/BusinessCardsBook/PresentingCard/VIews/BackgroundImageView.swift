@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YellowBackgroundImageView: UIImageView {
+class BackgroundImageView: UIImageView {
 
     private let yellowPaper: UIImage? = UIImage(named: "leather")
 

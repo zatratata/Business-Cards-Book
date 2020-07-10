@@ -12,9 +12,9 @@ import UIKit
 class CoreDataManager {
 
     static let shared = CoreDataManager()
-    static let entityName = "BusinessCardsBook"
+    static let entityName = "BusinessCards"
 
-    private var currentContextData: [BusinessCards]?
+   private var currentContextData: [BusinessCards]?
 
     private let keyForSortDescriptor = "dateOfLastUsing"
 
@@ -32,7 +32,7 @@ class CoreDataManager {
         self.persistentContainer.viewContext
     }
 
-    private func saveContext () {
+    func saveContext () {
 
         if self.context.hasChanges {
               do {
@@ -92,17 +92,10 @@ class CoreDataManager {
     }
 
     func changeDateOfLastUsingInContextData(forCardId id: UUID, with date: Date) {
-
-        do {
-            let result: [BusinessCards] = try self.context
-                .fetch(BusinessCards.fetchRequest())
-            result.forEach {
-                if let cardID = $0.cardID, cardID == id {
-                    $0.dateOfLastUsing = date
-                }
+        self.currentContextData?.forEach {
+            if let cardID = $0.cardID, cardID == id {
+                $0.dateOfLastUsing = date
             }
-        } catch let error as NSError {
-            print("Coldn't read data. \(error), \(error.userInfo)")
         }
     }
 
@@ -122,7 +115,5 @@ class CoreDataManager {
         newCard.averageServiceEvaluationInTheChain = card.averageServiceEvaluationInTheChain ?? 0.0
 
         self.saveContext()
-
-        print("card was saved")
     }
 }

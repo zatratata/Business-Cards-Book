@@ -15,9 +15,8 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
     weak var delegate: CardsTableViewControllerDelegate?
 
     // MARK: - GUI
-    private lazy var backgroundImageView = YellowBackgroundImageView()
-    private var phoneNumberTextField = CustomTextField()
-
+    private lazy var backgroundImageView = BackgroundImageView()
+    
     private lazy var cardImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .lightGray
@@ -37,6 +36,13 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
         let field = CustomTextField()
         field.setCustomPlaceholder(NSLocalizedString("name text field placeholder", comment: ""))
 
+        return field
+    }()
+    
+    private lazy var phoneNumberTextField: CustomTextField = {
+        let field = CustomTextField()
+        field.setCustomPlaceholder(NSLocalizedString("phone text field placeholder", comment: ""))
+        
         return field
     }()
 

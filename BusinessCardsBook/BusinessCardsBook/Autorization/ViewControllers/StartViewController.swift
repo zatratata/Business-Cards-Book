@@ -9,18 +9,18 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
-  static var profile: ProfileModel?
-
-        private let keyForUserDefault: String = "UserDataBusinessCardsBook"
-
-        private lazy var contentView: UIView = {
-            let view = UIView()
-            view.backgroundColor = .red
-            view.translatesAutoresizingMaskIntoConstraints = false
-
-            return view
-        }()
+    
+    static var profile: ProfileModel?
+    
+    private let keyForUserDefault: String = "UserDataBusinessCardsBook2"
+    private let screenImage: UIImage? = UIImage(named: "StartScreen")
+    
+    private lazy var contentView: UIImageView = {
+        let view = UIImageView()
+        view.image = self.screenImage
+ 
+        return view
+    }()
 
     // MARK: - Life cycle
         override func viewDidLoad() {
@@ -50,21 +50,15 @@ class StartViewController: UIViewController {
                 let nextViewController = CardsTableViewController()
                 if let model = CoreDataManager.shared.loadDataToCardsArrayModel() {
                     nextViewController.cardsModel = model
+                }
                     self.navigationController?.pushViewController(nextViewController,
-                                                                  animated: false)
+                                            animated: true)
                 } else {
+                    print("here")
                 let nextViewController = CreatingProfileViewController()
                 self.navigationController?.pushViewController(nextViewController,
-                                                              animated: false)
+                                        animated: true)
                 }
-
-                //        nextViewController.transitioningDelegate = self.transitionManager
-                //        self.present(nextViewController, animated: true, completion: nil)
-                //        self.navigationController?.pushViewController(nextViewController, animated: true)
-
-                //            return
-
-            }
         }
 
         private func readFromUserDefault() -> ProfileModel? {

@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "kraska-dzhoker-joker-grimm-kostium-lestnitsa-joaquin-phoenix.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "kraska-dzhoker-joker-grimm-kostium-lestnitsa-joaquin-phoenix-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

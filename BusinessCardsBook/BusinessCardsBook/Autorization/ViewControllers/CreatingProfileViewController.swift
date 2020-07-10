@@ -11,7 +11,7 @@ import UIKit
 
 class CreatingProfileViewController: UIViewController, UINavigationControllerDelegate {
 
-    private let keyForUserDefault: String = "UserDataBusinessCardsBook"
+    private let keyForUserDefault: String = "UserDataBusinessCardsBook2"
     private let barTitle: String = NSLocalizedString("bar title for creating profile VC", comment: "")
     private var model: ProfileModel?
 
