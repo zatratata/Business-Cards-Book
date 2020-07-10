@@ -15,8 +15,6 @@ protocol CardsTableViewControllerDelegate: class {
 
 class CardsTableViewController: UIViewController {
 
-    private let transitionManager = ModalyPresentationManager()
-
     lazy var selectedCardFrame: CGRect = CGRect()
 
     lazy var selectedCardImage: UIImageView = UIImageView()

@@ -23,6 +23,11 @@
 		A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A092844E24B8C5A500DFC06B /* CoreDataModel.xcdatamodeld */; };
 		A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */; };
 		A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */; };
+		A092845B24B8D04700DFC06B /* PresentingCardInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */; };
+		A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845D24B8D08E00DFC06B /* RatingView.swift */; };
+		A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */; };
+		A092846224B8D12B00DFC06B /* YellowBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846124B8D12B00DFC06B /* YellowBackgroundImageView.swift */; };
+		A092846424B8D15B00DFC06B /* ShowRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846324B8D15B00DFC06B /* ShowRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +48,11 @@
 		A092844F24B8C5A500DFC06B /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCardInformationVC.swift; sourceTree = "<group>"; };
+		A092845D24B8D08E00DFC06B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
+		A092846124B8D12B00DFC06B /* YellowBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowBackgroundImageView.swift; sourceTree = "<group>"; };
+		A092846324B8D15B00DFC06B /* ShowRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 				A07A1EFE24B713F40057A62D /* Resources */,
 				A07A1EFF24B7144F0057A62D /* Autorization */,
 				A07A1F0B24B716A10057A62D /* TableView */,
+				A092845924B8CFB900DFC06B /* PresentingCard */,
 				A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */,
 				A07A1EF124B7114A0057A62D /* Info.plist */,
 			);
@@ -168,6 +179,26 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		A092845924B8CFB900DFC06B /* PresentingCard */ = {
+			isa = PBXGroup;
+			children = (
+				A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */,
+				A092845C24B8D07600DFC06B /* VIews */,
+			);
+			path = PresentingCard;
+			sourceTree = "<group>";
+		};
+		A092845C24B8D07600DFC06B /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				A092845D24B8D08E00DFC06B /* RatingView.swift */,
+				A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */,
+				A092846124B8D12B00DFC06B /* YellowBackgroundImageView.swift */,
+				A092846324B8D15B00DFC06B /* ShowRatingView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,7 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07A1F0424B714F30057A62D /* LabelForProfile.swift in Sources */,
+				A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */,
 				A07A1F0824B7156A0057A62D /* CreatingProfileViewController.swift in Sources */,
+				A092845B24B8D04700DFC06B /* PresentingCardInformationVC.swift in Sources */,
+				A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */,
 				A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */,
 				A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */,
 				A07A1F1124B718130057A62D /* PocketCell.swift in Sources */,
@@ -255,8 +289,10 @@
 				A07A1F0F24B717740057A62D /* CardModel.swift in Sources */,
 				A07A1EFB24B712760057A62D /* StartViewController.swift in Sources */,
 				A07A1F1424B718860057A62D /* CoreDataManager.swift in Sources */,
+				A092846424B8D15B00DFC06B /* ShowRatingView.swift in Sources */,
 				A07A1F0624B715280057A62D /* ProfileModel.swift in Sources */,
 				A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */,
+				A092846224B8D12B00DFC06B /* YellowBackgroundImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
