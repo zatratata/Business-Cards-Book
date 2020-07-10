@@ -28,6 +28,9 @@
 		A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */; };
 		A092846224B8D12B00DFC06B /* YellowBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846124B8D12B00DFC06B /* YellowBackgroundImageView.swift */; };
 		A092846424B8D15B00DFC06B /* ShowRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846324B8D15B00DFC06B /* ShowRatingView.swift */; };
+		A092846724B8D1E500DFC06B /* CreatingCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846624B8D1E500DFC06B /* CreatingCardViewController.swift */; };
+		A092846A24B8D25C00DFC06B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846924B8D25C00DFC06B /* CustomTextField.swift */; };
+		A092846D24B8D2A200DFC06B /* TextField+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846C24B8D2A200DFC06B /* TextField+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
 		A092846124B8D12B00DFC06B /* YellowBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowBackgroundImageView.swift; sourceTree = "<group>"; };
 		A092846324B8D15B00DFC06B /* ShowRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRatingView.swift; sourceTree = "<group>"; };
+		A092846624B8D1E500DFC06B /* CreatingCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingCardViewController.swift; sourceTree = "<group>"; };
+		A092846924B8D25C00DFC06B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A092846C24B8D2A200DFC06B /* TextField+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +94,12 @@
 			children = (
 				A07A1EFC24B713BE0057A62D /* App Delegate */,
 				A07A1EFD24B713DB0057A62D /* Common */,
+				A092846B24B8D27E00DFC06B /* Extensions */,
 				A07A1EFE24B713F40057A62D /* Resources */,
+				A092846E24B8D2FC00DFC06B /* Models */,
 				A07A1EFF24B7144F0057A62D /* Autorization */,
 				A07A1F0B24B716A10057A62D /* TableView */,
+				A092846524B8D1B100DFC06B /* CreatingCard */,
 				A092845924B8CFB900DFC06B /* PresentingCard */,
 				A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */,
 				A07A1EF124B7114A0057A62D /* Info.plist */,
@@ -163,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				A07A1F0C24B717130057A62D /* CardsTableViewController.swift */,
-				A07A1F0E24B717740057A62D /* CardModel.swift */,
 				A07A1F1024B718130057A62D /* PocketCell.swift */,
 			);
 			path = TableView;
@@ -197,6 +205,39 @@
 				A092846324B8D15B00DFC06B /* ShowRatingView.swift */,
 			);
 			path = VIews;
+			sourceTree = "<group>";
+		};
+		A092846524B8D1B100DFC06B /* CreatingCard */ = {
+			isa = PBXGroup;
+			children = (
+				A092846624B8D1E500DFC06B /* CreatingCardViewController.swift */,
+				A092846824B8D22D00DFC06B /* Views */,
+			);
+			path = CreatingCard;
+			sourceTree = "<group>";
+		};
+		A092846824B8D22D00DFC06B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A092846924B8D25C00DFC06B /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A092846B24B8D27E00DFC06B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A092846C24B8D2A200DFC06B /* TextField+Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A092846E24B8D2FC00DFC06B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A07A1F0E24B717740057A62D /* CardModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +320,8 @@
 				A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */,
 				A07A1F0824B7156A0057A62D /* CreatingProfileViewController.swift in Sources */,
 				A092845B24B8D04700DFC06B /* PresentingCardInformationVC.swift in Sources */,
+				A092846A24B8D25C00DFC06B /* CustomTextField.swift in Sources */,
+				A092846724B8D1E500DFC06B /* CreatingCardViewController.swift in Sources */,
 				A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */,
 				A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */,
 				A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */,
@@ -293,6 +336,7 @@
 				A07A1F0624B715280057A62D /* ProfileModel.swift in Sources */,
 				A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */,
 				A092846224B8D12B00DFC06B /* YellowBackgroundImageView.swift in Sources */,
+				A092846D24B8D2A200DFC06B /* TextField+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
