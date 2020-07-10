@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  BusinessCardsBook
+
+  Created by Николай Подгайский on 7/10/20.
+  Copyright © 2020 Padhaiski Nikolay. All rights reserved.
+*/
+
+//MARK: - Common
+"ok" = "OK";
+"Cancel" = "Cancel";
+"Apply" = "Apply";
+"Save" = "Save";
+
+//MARK: CreatingProfileViewController
+"bar title for creating profile VC" = "Profile";
+"name label text" = "Name:";
+"placeholder for name textField" = "Enter your name!";
+"phone label text" = "Phone number:";
+"placeholder for phone and socialnetwork textFields" = "You can hide it from sharing";
+"socialnetwork label text" = "Social network ID:";
+"save button title" = "Save";
+
+// empty name textField alert
+"warning alert title" = "Warning";
+"empty name message" = "Please, enter your name!";
+
+// image picker alert
+"Take Photo" = "Take Photo";
+"Choose From Library" = "Choose From Library";
+
+//custom alert
+"askUserInfoPermissionLabel text" = "Allow sharing user data along with the transmitted business card?";
+"askAlwaysBeforeSharingLabel text" = "Ask for permission before each broadcast?";
+
+//MARK: CreatingCardViewController
+"name text field placeholder" = "Name of person or organization";
+"webSiteTextField placeholder" = "Web site address";
+"address text field placeholder" = "Actual address";
+"description text field placeholder" = "Description of service";
+
+//MARK: PresentingCardViewController
+"Share" = "Share";

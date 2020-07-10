@@ -31,6 +31,7 @@
 		A092846724B8D1E500DFC06B /* CreatingCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846624B8D1E500DFC06B /* CreatingCardViewController.swift */; };
 		A092846A24B8D25C00DFC06B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846924B8D25C00DFC06B /* CustomTextField.swift */; };
 		A092846D24B8D2A200DFC06B /* TextField+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092846C24B8D2A200DFC06B /* TextField+Ex.swift */; };
+		A092847224B8D3CF00DFC06B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A092847424B8D3CF00DFC06B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,9 @@
 		A092846624B8D1E500DFC06B /* CreatingCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingCardViewController.swift; sourceTree = "<group>"; };
 		A092846924B8D25C00DFC06B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A092846C24B8D2A200DFC06B /* TextField+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Ex.swift"; sourceTree = "<group>"; };
+		A092847324B8D3CF00DFC06B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A092847524B8D49500DFC06B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A092847624B8D49600DFC06B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				A07A1EEC24B7114A0057A62D /* Assets.xcassets */,
+				A092846F24B8D37800DFC06B /* Localization */,
 				A092844E24B8C5A500DFC06B /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Resources;
@@ -240,6 +245,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A092846F24B8D37800DFC06B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A092847424B8D3CF00DFC06B /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,6 +298,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A07A1ED724B711470057A62D;
 			packageReferences = (
@@ -305,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07A1EF024B7114A0057A62D /* LaunchScreen.storyboard in Resources */,
+				A092847224B8D3CF00DFC06B /* Localizable.strings in Resources */,
 				A07A1EED24B7114A0057A62D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,8 +362,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				A07A1EEF24B7114A0057A62D /* Base */,
+				A092847524B8D49500DFC06B /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A092847424B8D3CF00DFC06B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A092847324B8D3CF00DFC06B /* en */,
+				A092847624B8D49600DFC06B /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -358,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -418,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
