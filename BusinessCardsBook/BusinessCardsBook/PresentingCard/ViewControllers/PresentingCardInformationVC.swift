@@ -61,6 +61,10 @@ class PresentCardInformationVC: UIViewController {
     private lazy var addressLabel: ReusableLable = {
         let label = ReusableLable()
         label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(self.showAddressOnMap))
+        label.addGestureRecognizer(gesture)
 
         return label
     }()
@@ -184,6 +188,18 @@ class PresentCardInformationVC: UIViewController {
     }
 
     // MARK: - Actions
+    @objc private func showAddressOnMap() {
+        let nextVC = MapViewController()
+        nextVC.place = (27.333632, 53.938691)
+        nextVC.cardName = self.card?.name
+        nextVC.address = self.card?.adress
+        self.navigationController?.modalPresentationStyle = .popover
+        self.navigationController?.modalTransitionStyle = .coverVertical
+        self.navigationController?.present(nextVC,
+                                           animated: true,
+                                           completion: nil)
+    }
+    
     @objc private func callNumber() {
 
         guard let number = self.phoneNumberLabel.text,

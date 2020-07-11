@@ -34,6 +34,8 @@
 		A092847224B8D3CF00DFC06B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A092847424B8D3CF00DFC06B /* Localizable.strings */; };
 		A092847824B8EDA300DFC06B /* CardDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092847724B8EDA300DFC06B /* CardDocument.swift */; };
 		A092847A24B8F67F00DFC06B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092847924B8F67F00DFC06B /* UIImage+Ex.swift */; };
+		A092847D24B9067800DFC06B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092847C24B9067800DFC06B /* MapViewController.swift */; };
+		A0C0B79324BA3FB700CB0DCF /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0B79224BA3FB700CB0DCF /* Annotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		A092847624B8D49600DFC06B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A092847724B8EDA300DFC06B /* CardDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDocument.swift; sourceTree = "<group>"; };
 		A092847924B8F67F00DFC06B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		A092847C24B9067800DFC06B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A0C0B79224BA3FB700CB0DCF /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +194,8 @@
 		A092845924B8CFB900DFC06B /* PresentingCard */ = {
 			isa = PBXGroup;
 			children = (
-				A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */,
+				A0C0B79224BA3FB700CB0DCF /* Annotation.swift */,
+				A092847B24B9063200DFC06B /* ViewControllers */,
 				A092845C24B8D07600DFC06B /* VIews */,
 			);
 			path = PresentingCard;
@@ -249,6 +254,15 @@
 				A092847424B8D3CF00DFC06B /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		A092847B24B9063200DFC06B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */,
+				A092847C24B9067800DFC06B /* MapViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,12 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07A1F0424B714F30057A62D /* LabelForProfile.swift in Sources */,
+				A0C0B79324BA3FB700CB0DCF /* Annotation.swift in Sources */,
 				A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */,
 				A07A1F0824B7156A0057A62D /* CreatingProfileViewController.swift in Sources */,
 				A092845B24B8D04700DFC06B /* PresentingCardInformationVC.swift in Sources */,
 				A092846A24B8D25C00DFC06B /* CustomTextField.swift in Sources */,
 				A092846724B8D1E500DFC06B /* CreatingCardViewController.swift in Sources */,
 				A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */,
+				A092847D24B9067800DFC06B /* MapViewController.swift in Sources */,
 				A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */,
 				A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */,
 				A07A1F1124B718130057A62D /* PocketCell.swift in Sources */,
