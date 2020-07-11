@@ -47,7 +47,15 @@ class MapViewController: UIViewController {
         
         self.makeConstraints()
         self.showAddressOnMap()
+    }
+    
+    deinit {
 
+          mapView.annotations.forEach{mapView.removeAnnotation($0)}
+
+          mapView.delegate = nil
+
+          print("deinit: MapViewController")
     }
     
     //MARK: - Constraints

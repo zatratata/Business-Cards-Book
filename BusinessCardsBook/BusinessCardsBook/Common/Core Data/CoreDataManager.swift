@@ -78,6 +78,8 @@ class CoreDataManager {
                 phoneNumber: $0.phoneNumber,
                 webSite: $0.webSite,
                 adress: $0.address,
+                latitude: $0.latitude,
+                longitude: $0.longitude,
                 description: $0.serviceDescription,
                 cardID: cardID,
                 dateOfLastUsing: dateOfLastUsing,

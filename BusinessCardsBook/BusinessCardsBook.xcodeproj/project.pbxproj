@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A040A4B124BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4AF24BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift */; };
 		A040A4B224BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4B024BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift */; };
+		A040A4B524BA503400BDAFC3 /* YandexGeocoderNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4B424BA503400BDAFC3 /* YandexGeocoderNetworking.swift */; };
+		A040A4B724BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4B624BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift */; };
+		A040A4BA24BA515600BDAFC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A040A4B924BA515600BDAFC3 /* Alamofire */; };
+		A040A4BC24BA521C00BDAFC3 /* YandexResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */; };
 		A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1EE324B711470057A62D /* AppDelegate.swift */; };
 		A07A1EED24B7114A0057A62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEC24B7114A0057A62D /* Assets.xcassets */; };
 		A07A1EF024B7114A0057A62D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */; };
@@ -41,6 +45,9 @@
 /* Begin PBXFileReference section */
 		A040A4AF24BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A040A4B024BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A040A4B424BA503400BDAFC3 /* YandexGeocoderNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexGeocoderNetworking.swift; sourceTree = "<group>"; };
+		A040A4B624BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YandexGeocoderNetworking+ Ex.swift"; sourceTree = "<group>"; };
+		A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponseModel.swift; sourceTree = "<group>"; };
 		A07A1EE024B711470057A62D /* BusinessCardsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A1EE324B711470057A62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A07A1EEC24B7114A0057A62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,12 +86,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07A1EF924B711900057A62D /* SnapKit in Frameworks */,
+				A040A4BA24BA515600BDAFC3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A040A4B324BA4FEC00BDAFC3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A040A4B424BA503400BDAFC3 /* YandexGeocoderNetworking.swift */,
+				A040A4B624BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift */,
+				A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		A07A1ED724B711470057A62D = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 		A07A1EFD24B713DB0057A62D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A040A4B324BA4FEC00BDAFC3 /* Networking */,
 				A07A1F1224B718560057A62D /* Core Data */,
 			);
 			path = Common;
@@ -283,6 +302,7 @@
 			name = BusinessCardsBook;
 			packageProductDependencies = (
 				A07A1EF824B711900057A62D /* SnapKit */,
+				A040A4B924BA515600BDAFC3 /* Alamofire */,
 			);
 			productName = BusinessCardsBook;
 			productReference = A07A1EE024B711470057A62D /* BusinessCardsBook.app */;
@@ -315,6 +335,7 @@
 			mainGroup = A07A1ED724B711470057A62D;
 			packageReferences = (
 				A07A1EF724B711900057A62D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A040A4B824BA515600BDAFC3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = A07A1EE124B711470057A62D /* Products */;
 			projectDirPath = "";
@@ -346,6 +367,7 @@
 				A07A1F0424B714F30057A62D /* LabelForProfile.swift in Sources */,
 				A0C0B79324BA3FB700CB0DCF /* Annotation.swift in Sources */,
 				A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */,
+				A040A4B524BA503400BDAFC3 /* YandexGeocoderNetworking.swift in Sources */,
 				A07A1F0824B7156A0057A62D /* CreatingProfileViewController.swift in Sources */,
 				A092845B24B8D04700DFC06B /* PresentingCardInformationVC.swift in Sources */,
 				A092846A24B8D25C00DFC06B /* CustomTextField.swift in Sources */,
@@ -357,7 +379,9 @@
 				A040A4B124BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift in Sources */,
 				A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */,
 				A040A4B224BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift in Sources */,
+				A040A4B724BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift in Sources */,
 				A07A1F0A24B715AF0057A62D /* CustomAlert.swift in Sources */,
+				A040A4BC24BA521C00BDAFC3 /* YandexResponseModel.swift in Sources */,
 				A07A1F0D24B717130057A62D /* CardsTableViewController.swift in Sources */,
 				A092847A24B8F67F00DFC06B /* UIImage+Ex.swift in Sources */,
 				A07A1F0F24B717740057A62D /* CardModel.swift in Sources */,
@@ -571,6 +595,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A040A4B824BA515600BDAFC3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
 		A07A1EF724B711900057A62D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -582,6 +614,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A040A4B924BA515600BDAFC3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A040A4B824BA515600BDAFC3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		A07A1EF824B711900057A62D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A07A1EF724B711900057A62D /* XCRemoteSwiftPackageReference "SnapKit" */;

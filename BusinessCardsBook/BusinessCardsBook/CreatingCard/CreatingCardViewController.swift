@@ -13,6 +13,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
 
     // MARK: - Variables
     weak var delegate: CardsTableViewControllerDelegate?
+    private var coordinates: (longitude: Double, latitude: Double)?
 
     // MARK: - GUI
     private lazy var backgroundImageView = BackgroundImageView()
@@ -55,6 +56,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
 
     private lazy var addressTextField: CustomTextField = {
         let field = CustomTextField()
+        field.delegate = self
         field.setCustomPlaceholder(NSLocalizedString("address text field placeholder", comment: ""))
 
         return field
@@ -190,7 +192,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
                                                                      comment: ""))
                 return
         }
-
+        
         var url: URL?
         if let stringURL = self.webSiteTextField.text {
             url = URL(string: stringURL)
@@ -203,7 +205,8 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             phoneNumber: self.phoneNumberTextField.text,
             webSite: url,
             adress: self.addressTextField.text,
-            latitude: 
+            latitude: self.coordinates?.latitude,
+            longitude: self.coordinates?.longitude,
             description: self.descriptionTextField.text,
             cardID: UUID(),
             dateOfLastUsing: Date(),
@@ -267,3 +270,80 @@ extension CreatingCardViewController: UIImagePickerControllerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+//MARK: - extension UITextFieldDelegate
+extension CreatingCardViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == self.addressTextField,
+            let text = self.addressTextField.text {
+            self.getCoordinateFromYandexAPI(forAddress: text)
+        }
+    }
+}
+
+//MARK: - extension Yandex request
+extension CreatingCardViewController {
+    
+    private func getCoordinateFromYandexAPI(forAddress address: String) {
+        
+        let params: [String: String] = ["geocode": address]
+        
+        YandexGeocoderNetworking.shared.requestAlamofire(
+            parameters: params,
+            okHandler: { [weak self] (model: YandexResponseModel) in
+                var responseModel: [FeatureMember]? = []
+                responseModel = model.response.geoObjectCollection.featureMember
+                guard !(responseModel?.isEmpty ?? true),
+                    let stringLocation = responseModel?[0].geoObject.point.pos else {
+                        return
+                }
+                
+                self?.coordinates = self?.transformToDoubleCoordinate(
+                    fromString: stringLocation)
+                
+            }, errorHandler: { [weak self] (error: NetError) in
+                self?.handleError(error: error)
+        })
+    }
+    
+    private func transformToDoubleCoordinate(
+        fromString coordinates: String) -> (Double, Double)? {
+        
+        let stringCoordinates = coordinates.components(separatedBy: " ")
+        let latitudeString = stringCoordinates[0]
+        let longitudeString = stringCoordinates[1]
+        
+        guard let latitude = Double(latitudeString),
+            let longitude = Double(longitudeString) else { return nil }
+        
+        return (longitude, latitude)
+    }
+    
+    private func handleError(error: NetError) {
+        let title = NSLocalizedString("warning alert title", comment: "")
+        var message = NSLocalizedString(
+            "an error occurred when trying to request coordinates",
+            comment: "")
+        
+        switch error {
+        case .incorrectUrl:
+            message += NSLocalizedString("incorect URL", comment: "")
+        case .networkError(let error):
+            message += error.localizedDescription
+        default: break
+        }
+        
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        self.navigationController?.present(alert, animated: true, completion: nil)
+    }
+}
+

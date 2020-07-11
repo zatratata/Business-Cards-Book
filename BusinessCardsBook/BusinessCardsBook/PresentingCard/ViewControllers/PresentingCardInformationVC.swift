@@ -61,10 +61,6 @@ class PresentCardInformationVC: UIViewController {
     private lazy var addressLabel: ReusableLable = {
         let label = ReusableLable()
         label.numberOfLines = 0
-        label.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self,
-                                             action: #selector(self.showAddressOnMap))
-        label.addGestureRecognizer(gesture)
 
         return label
     }()
@@ -110,6 +106,7 @@ class PresentCardInformationVC: UIViewController {
 
         self.setupConstraints()
         self.setValuesForGUI()
+        self.setUpAddressLabel()
     }
 
     // MARK: - Constraints
@@ -173,6 +170,24 @@ class PresentCardInformationVC: UIViewController {
     }
 
     // MARK: - Methods
+    private func setUpAddressLabel() {
+        
+        print(self.card?.latitude)
+        
+        guard let longitude = self.card?.longitude,
+            let latitude = self.card?.latitude,
+            longitude != 0,
+            latitude != 0 else {
+                return
+        }
+        
+        self.addressLabel.textColor = .blue
+        self.addressLabel.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(self.showAddressOnMap))
+        self.addressLabel.addGestureRecognizer(gesture)
+    }
+    
     private func setValuesForGUI() {
         guard let card = card else { return }
         
@@ -190,15 +205,16 @@ class PresentCardInformationVC: UIViewController {
 
     // MARK: - Actions
     @objc private func showAddressOnMap() {
-//TODO
-        
-        
-        
-        
         let nextVC = MapViewController()
+        
+        guard let longitude = self.card?.longitude,
+                  let latitude = self.card?.latitude else {
+                      return
+              }
+        
         nextVC.setVariables(cardName: self.card?.name,
                             address: self.card?.adress,
-                            coordinate: (27.333632, 53.938691))
+                            coordinate: (latitude, longitude))
         self.navigationController?.modalPresentationStyle = .popover
         self.navigationController?.modalTransitionStyle = .coverVertical
         self.navigationController?.present(nextVC,
