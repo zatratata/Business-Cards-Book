@@ -2,7 +2,7 @@
 //  BusinessCards+CoreDataProperties.swift
 //  BusinessCardsBook
 //
-//  Created by Николай Подгайский on 7/10/20.
+//  Created by Николай Подгайский on 7/11/20.
 //  Copyright © 2020 Padhaiski Nikolay. All rights reserved.
 //
 //
@@ -29,5 +29,7 @@ extension BusinessCards {
     @NSManaged public var userID: UUID?
     @NSManaged public var userServiceEvaluation: Double
     @NSManaged public var webSite: URL?
+    @NSManaged public var longitude: Double
+    @NSManaged public var latitude: Double
 
 }

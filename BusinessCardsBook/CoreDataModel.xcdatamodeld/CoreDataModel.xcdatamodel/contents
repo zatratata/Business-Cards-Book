@@ -6,6 +6,8 @@
         <attribute name="cardID" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="dateOfLastUsing" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="serviceDescription" optional="YES" attributeType="String"/>
@@ -15,6 +17,6 @@
         <attribute name="webSite" optional="YES" attributeType="URI"/>
     </entity>
     <elements>
-        <element name="BusinessCards" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="BusinessCards" positionX="-63" positionY="-18" width="128" height="253"/>
     </elements>
 </model>

@@ -175,6 +175,7 @@ class PresentCardInformationVC: UIViewController {
     // MARK: - Methods
     private func setValuesForGUI() {
         guard let card = card else { return }
+        
         //Change a date of last using for current card
         CoreDataManager.shared.changeDateOfLastUsingInContextData(forCardId: card.cardID, with: Date())
 
@@ -189,10 +190,15 @@ class PresentCardInformationVC: UIViewController {
 
     // MARK: - Actions
     @objc private func showAddressOnMap() {
+//TODO
+        
+        
+        
+        
         let nextVC = MapViewController()
-        nextVC.place = (27.333632, 53.938691)
-        nextVC.cardName = self.card?.name
-        nextVC.address = self.card?.adress
+        nextVC.setVariables(cardName: self.card?.name,
+                            address: self.card?.adress,
+                            coordinate: (27.333632, 53.938691))
         self.navigationController?.modalPresentationStyle = .popover
         self.navigationController?.modalTransitionStyle = .coverVertical
         self.navigationController?.present(nextVC,

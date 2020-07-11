@@ -12,9 +12,9 @@ import MapKit
 class MapViewController: UIViewController {
     
     //MARK: - Variables
-    var place: (longitude: Double, latitude: Double) = (0, 0)
-    var cardName: String? = "Service"
-    var address: String?
+    private var place: (longitude: Double, latitude: Double) = (0, 0)
+    private var cardName: String?
+    private var address: String?
     
     private let identifireForReusableAnnotation = "PlaceAnnotation"
     
@@ -82,6 +82,13 @@ class MapViewController: UIViewController {
                                     subtitle: self.address,
                                    coordinate: place)
         self.mapView.addAnnotation(annotation)
+    }
+    
+    //MARK: - Setter
+    func setVariables(cardName: String?, address: String?, coordinate: (Double, Double)) {
+        self.cardName = cardName
+        self.address = address
+        self.place = coordinate
     }
 }
 

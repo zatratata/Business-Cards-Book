@@ -2,7 +2,7 @@
 //  BusinessCards+CoreDataClass.swift
 //  BusinessCardsBook
 //
-//  Created by Николай Подгайский on 7/10/20.
+//  Created by Николай Подгайский on 7/11/20.
 //  Copyright © 2020 Padhaiski Nikolay. All rights reserved.
 //
 //

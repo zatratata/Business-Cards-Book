@@ -108,6 +108,8 @@ class CoreDataManager {
         newCard.phoneNumber = card.phoneNumber
         newCard.webSite = card.webSite
         newCard.address = card.adress
+        newCard.latitude = card.latitude ?? 0.0
+        newCard.longitude = card.longitude ?? 0.0
         newCard.cardID = card.cardID
         newCard.serviceDescription = card.description
         newCard.dateOfLastUsing = card.dateOfLastUsing

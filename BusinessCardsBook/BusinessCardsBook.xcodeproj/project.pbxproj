@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A040A4B124BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4AF24BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift */; };
+		A040A4B224BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4B024BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift */; };
 		A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1EE324B711470057A62D /* AppDelegate.swift */; };
 		A07A1EED24B7114A0057A62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEC24B7114A0057A62D /* Assets.xcassets */; };
 		A07A1EF024B7114A0057A62D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */; };
@@ -21,8 +23,6 @@
 		A07A1F1124B718130057A62D /* PocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F1024B718130057A62D /* PocketCell.swift */; };
 		A07A1F1424B718860057A62D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1F1324B718860057A62D /* CoreDataManager.swift */; };
 		A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A092844E24B8C5A500DFC06B /* CoreDataModel.xcdatamodeld */; };
-		A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */; };
-		A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */; };
 		A092845B24B8D04700DFC06B /* PresentingCardInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */; };
 		A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845D24B8D08E00DFC06B /* RatingView.swift */; };
 		A092846024B8D0DC00DFC06B /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */; };
@@ -39,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A040A4AF24BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A040A4B024BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A07A1EE024B711470057A62D /* BusinessCardsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A1EE324B711470057A62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A07A1EEC24B7114A0057A62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		A07A1F1024B718130057A62D /* PocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCell.swift; sourceTree = "<group>"; };
 		A07A1F1324B718860057A62D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A092844F24B8C5A500DFC06B /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BusinessCards+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A092845A24B8D04700DFC06B /* PresentingCardInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCardInformationVC.swift; sourceTree = "<group>"; };
 		A092845D24B8D08E00DFC06B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				A07A1F1324B718860057A62D /* CoreDataManager.swift */,
-				A092845524B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift */,
-				A092845624B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift */,
+				A040A4AF24BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift */,
+				A040A4B024BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -352,10 +352,11 @@
 				A092846724B8D1E500DFC06B /* CreatingCardViewController.swift in Sources */,
 				A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */,
 				A092847D24B9067800DFC06B /* MapViewController.swift in Sources */,
-				A092845824B8C8C500DFC06B /* BusinessCards+CoreDataProperties.swift in Sources */,
 				A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */,
 				A07A1F1124B718130057A62D /* PocketCell.swift in Sources */,
+				A040A4B124BA4C6400BDAFC3 /* BusinessCards+CoreDataClass.swift in Sources */,
 				A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */,
+				A040A4B224BA4C6400BDAFC3 /* BusinessCards+CoreDataProperties.swift in Sources */,
 				A07A1F0A24B715AF0057A62D /* CustomAlert.swift in Sources */,
 				A07A1F0D24B717130057A62D /* CardsTableViewController.swift in Sources */,
 				A092847A24B8F67F00DFC06B /* UIImage+Ex.swift in Sources */,
@@ -364,7 +365,6 @@
 				A07A1F1424B718860057A62D /* CoreDataManager.swift in Sources */,
 				A092846424B8D15B00DFC06B /* ShowRatingView.swift in Sources */,
 				A07A1F0624B715280057A62D /* ProfileModel.swift in Sources */,
-				A092845724B8C8C500DFC06B /* BusinessCards+CoreDataClass.swift in Sources */,
 				A092846224B8D12B00DFC06B /* BackgroundImageView.swift in Sources */,
 				A092847824B8EDA300DFC06B /* CardDocument.swift in Sources */,
 				A092846D24B8D2A200DFC06B /* TextField+Ex.swift in Sources */,

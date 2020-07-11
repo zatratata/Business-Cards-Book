@@ -16,6 +16,8 @@ struct CardModel: Codable {
     var phoneNumber: String?
     var webSite: URL?
     var adress: String?
+    var latitude: Double?
+    var longitude: Double?
     var description: String?
 
     var cardID: UUID

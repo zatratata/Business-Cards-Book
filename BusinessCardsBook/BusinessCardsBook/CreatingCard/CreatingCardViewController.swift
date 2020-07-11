@@ -113,8 +113,6 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
         self.view.addSubview(self.ratingView)
         self.view.addSubview(self.saveButton)
 
-//        self.view.addSubview(self.addPhoneButton)
-
         self.setupConstraints()
     }
 
@@ -166,13 +164,6 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             make.width.equalToSuperview().multipliedBy(0.6)
             make.height.equalTo(60)
         }
-
-//        self.addPhoneButton.snp.makeConstraints { (make) in
-//            make.left.equalTo(self.stackOfPhones.snp.right).offset(5)
-//            make.top.equalTo(self.stackOfPhones.snp.top)
-//            make.height.width.equalTo(self.nameTextField.snp.height)
-//
-//        }
     }
     // MARK: - Methods
     private func showWarningAlert(withMessage message: String) {
@@ -192,11 +183,6 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
     }
 
     // MARK: - Actions
-    @objc private func addTextField() {
-//        let textField = CustomTextField()
-//        self.stackOfPhones.addArrangedSubview(textField)
-    }
-
     @objc private func saveCard() {
         guard let text = nameTextField.text,
             !text.isEmpty else {
@@ -217,6 +203,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             phoneNumber: self.phoneNumberTextField.text,
             webSite: url,
             adress: self.addressTextField.text,
+            latitude: 
             description: self.descriptionTextField.text,
             cardID: UUID(),
             dateOfLastUsing: Date(),
