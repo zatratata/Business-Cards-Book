@@ -54,7 +54,6 @@ class StartViewController: UIViewController {
                     self.navigationController?.pushViewController(nextViewController,
                                             animated: true)
                 } else {
-                    print("here")
                 let nextViewController = CreatingProfileViewController()
                 self.navigationController?.pushViewController(nextViewController,
                                         animated: true)

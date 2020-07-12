@@ -49,15 +49,6 @@ class MapViewController: UIViewController {
         self.showAddressOnMap()
     }
     
-    deinit {
-
-          mapView.annotations.forEach{mapView.removeAnnotation($0)}
-
-          mapView.delegate = nil
-
-          print("deinit: MapViewController")
-    }
-    
     //MARK: - Constraints
     private func makeConstraints() {
         let safeArea = self.view.safeAreaLayoutGuide
@@ -103,9 +94,6 @@ class MapViewController: UIViewController {
 
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print(view)
-    }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? Annotation else { return nil }

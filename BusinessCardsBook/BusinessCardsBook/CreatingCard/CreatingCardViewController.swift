@@ -35,6 +35,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
 
     private lazy var nameTextField: CustomTextField = {
         let field = CustomTextField()
+        field.delegate = self
         field.setCustomPlaceholder(NSLocalizedString("name text field placeholder", comment: ""))
 
         return field
@@ -42,6 +43,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
     
     private lazy var phoneNumberTextField: CustomTextField = {
         let field = CustomTextField()
+        field.delegate = self
         field.setCustomPlaceholder(NSLocalizedString("phone text field placeholder", comment: ""))
         
         return field
@@ -49,6 +51,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
 
     private lazy var webSiteTextField: CustomTextField = {
         let field = CustomTextField()
+        field.delegate = self
         field.setCustomPlaceholder(NSLocalizedString("webSiteTextField placeholder", comment: ""))
 
         return field
@@ -64,6 +67,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
 
     private lazy var descriptionTextField: CustomTextField = {
         let field = CustomTextField()
+        field.delegate = self
         field.setCustomPlaceholder(NSLocalizedString("description text field placeholder", comment: ""))
 
         return field
@@ -198,6 +202,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             url = URL(string: stringURL)
         }
 
+        print(self.coordinates)
         //TODO phone number
         var newCard = CardModel(
             cardImage: nil,

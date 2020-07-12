@@ -49,6 +49,7 @@ class CreatingProfileViewController: UIViewController, UINavigationControllerDel
         field.placeholder = NSLocalizedString("placeholder for name textField", comment: "")
         field.textAlignment = .center
         field.borderStyle = .roundedRect
+        field.delegate = self
 
         return field
     }()
@@ -64,9 +65,11 @@ class CreatingProfileViewController: UIViewController, UINavigationControllerDel
         let field = UITextField()
         field.font = .boldSystemFont(ofSize: 22)
         field.textAlignment = .center
-        field.placeholder = NSLocalizedString("placeholder for phone and socialnetwork textFields",
-                                              comment: "")
+        field.placeholder = NSLocalizedString(
+            "placeholder for phone and socialnetwork textFields",
+            comment: "")
         field.borderStyle = .roundedRect
+        field.delegate = self
 
         return field
     }()
@@ -82,9 +85,11 @@ class CreatingProfileViewController: UIViewController, UINavigationControllerDel
         let field = UITextField()
         field.font = .boldSystemFont(ofSize: 22)
         field.textAlignment = .center
-        field.placeholder = NSLocalizedString("placeholder for phone and socialnetwork textFields",
-                                              comment: "")
+        field.placeholder = NSLocalizedString(
+            "placeholder for phone and socialnetwork textFields",
+            comment: "")
         field.borderStyle = .roundedRect
+        field.delegate = self
 
         return field
     }()
@@ -331,4 +336,13 @@ class CreatingProfileViewController: UIViewController, UINavigationControllerDel
       func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
       }
+}
+
+//MARK: - Extension UITextFieldDelegate
+extension CreatingProfileViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

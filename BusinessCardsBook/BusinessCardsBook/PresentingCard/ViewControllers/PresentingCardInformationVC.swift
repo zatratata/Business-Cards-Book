@@ -217,11 +217,9 @@ class PresentCardInformationVC: UIViewController {
         nextVC.setVariables(cardName: self.card?.name,
                             address: self.card?.adress,
                             coordinate: (latitude, longitude))
-        self.navigationController?.modalPresentationStyle = .popover
-        self.navigationController?.modalTransitionStyle = .coverVertical
-        self.navigationController?.present(nextVC,
-                                           animated: true,
-                                           completion: nil)
+        self.modalPresentationStyle = .popover
+        self.modalTransitionStyle = .coverVertical
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     @objc private func callNumber() {
