@@ -193,12 +193,13 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
                 return
         }
         
-        guard let phoneText = phoneNumberTextField.text,
-            phoneText.isPhoneNumber() else {
+        if let phoneText = phoneNumberTextField.text {
+            guard phoneText.isPhoneNumber() else {
                 self.showWarningAlert(
                     withMessage: NSLocalizedString("incorrect phone number",
                                                    comment: ""))
                 return
+            }
         }
         
         var url: URL?

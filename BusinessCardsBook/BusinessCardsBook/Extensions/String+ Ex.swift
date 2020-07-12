@@ -11,8 +11,10 @@ import Foundation
 extension String {
     
     func isPhoneNumber() -> Bool {
-        let phoneNumberRegex = "[0-9+]{1}" + "@" + "[0-9]{2,12}"
-        let phoneNumberPredicate = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
-        return phoneNumberPredicate.evaluate(with: self)
+        
+         let phoneNumberRegex = "^[6-9+]\\d{3,12}$"
+               let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
+               let isValidPhone = phoneTest.evaluate(with: self)
+               return isValidPhone
     }
 }
