@@ -13,6 +13,7 @@
 		A040A4B724BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4B624BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift */; };
 		A040A4BA24BA515600BDAFC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A040A4B924BA515600BDAFC3 /* Alamofire */; };
 		A040A4BC24BA521C00BDAFC3 /* YandexResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */; };
+		A040A4C024BBA51000BDAFC3 /* String+ Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4BF24BBA51000BDAFC3 /* String+ Ex.swift */; };
 		A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1EE324B711470057A62D /* AppDelegate.swift */; };
 		A07A1EED24B7114A0057A62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEC24B7114A0057A62D /* Assets.xcassets */; };
 		A07A1EF024B7114A0057A62D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		A040A4B424BA503400BDAFC3 /* YandexGeocoderNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexGeocoderNetworking.swift; sourceTree = "<group>"; };
 		A040A4B624BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YandexGeocoderNetworking+ Ex.swift"; sourceTree = "<group>"; };
 		A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponseModel.swift; sourceTree = "<group>"; };
+		A040A4BF24BBA51000BDAFC3 /* String+ Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ Ex.swift"; sourceTree = "<group>"; };
 		A07A1EE024B711470057A62D /* BusinessCardsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A1EE324B711470057A62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A07A1EEC24B7114A0057A62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				A092846C24B8D2A200DFC06B /* TextField+Ex.swift */,
 				A092847924B8F67F00DFC06B /* UIImage+Ex.swift */,
+				A040A4BF24BBA51000BDAFC3 /* String+ Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				A07A1F0D24B717130057A62D /* CardsTableViewController.swift in Sources */,
 				A092847A24B8F67F00DFC06B /* UIImage+Ex.swift in Sources */,
 				A07A1F0F24B717740057A62D /* CardModel.swift in Sources */,
+				A040A4C024BBA51000BDAFC3 /* String+ Ex.swift in Sources */,
 				A07A1EFB24B712760057A62D /* StartViewController.swift in Sources */,
 				A07A1F1424B718860057A62D /* CoreDataManager.swift in Sources */,
 				A092846424B8D15B00DFC06B /* ShowRatingView.swift in Sources */,

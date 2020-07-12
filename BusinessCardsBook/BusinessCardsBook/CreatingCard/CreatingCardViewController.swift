@@ -171,6 +171,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             make.height.equalTo(60)
         }
     }
+    
     // MARK: - Methods
     private func showWarningAlert(withMessage message: String) {
         let alert = UIAlertController()
@@ -182,18 +183,21 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
         self.present(alert, animated: true)
     }
 
-    private func isPhoneNumber(text: String) -> Bool {
-        let phoneNumberRegex = "[0-9+]{1}" + "@" + "[0-9]{2,12}"
-        let phoneNumberPredicate = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
-        return phoneNumberPredicate.evaluate(with: text)
-    }
-
     // MARK: - Actions
     @objc private func saveCard() {
         guard let text = nameTextField.text,
             !text.isEmpty else {
-                self.showWarningAlert(withMessage: NSLocalizedString("empty name message",
-                                                                     comment: ""))
+                self.showWarningAlert(
+                    withMessage: NSLocalizedString("empty name message",
+                                                   comment: ""))
+                return
+        }
+        
+        guard let phoneText = phoneNumberTextField.text,
+            phoneText.isPhoneNumber() else {
+                self.showWarningAlert(
+                    withMessage: NSLocalizedString("incorrect phone number",
+                                                   comment: ""))
                 return
         }
         
@@ -202,8 +206,6 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             url = URL(string: stringURL)
         }
 
-        print(self.coordinates)
-        //TODO phone number
         var newCard = CardModel(
             cardImage: nil,
             name: text,

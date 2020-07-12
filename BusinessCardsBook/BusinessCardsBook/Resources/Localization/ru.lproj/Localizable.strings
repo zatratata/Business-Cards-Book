@@ -42,6 +42,7 @@
 "description text field placeholder" = "Описание услуги";
 "an error occurred when trying to request coordinates" = "при попытке запросить координаты произошла ошибка: ";
 "incorect URL" = "неверный ULR";
+"incorrect phone number" = "Некорректный номер телефона";
 
 //MARK: PresentingCardViewController
 "Share" = "Share";

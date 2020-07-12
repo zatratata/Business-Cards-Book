@@ -41,6 +41,7 @@
 "description text field placeholder" = "Description of service";
 "an error occurred when trying to request coordinates" = "an error occurredwhen trying to request coordinates: ";
 "incorect URL" = "incorect URL";
+"incorrect phone number" = "Incorrect phone number";
 
 //MARK: PresentingCardViewController
 "Share" = "Share";
