@@ -13,7 +13,7 @@ class PocketCell: UITableViewCell {
 
     private lazy var rightPosition: CGRect = {
         var frame = self.cardView.frame
-        frame.origin.x += 100
+        frame.origin.x += 300
 
         return frame
     }()

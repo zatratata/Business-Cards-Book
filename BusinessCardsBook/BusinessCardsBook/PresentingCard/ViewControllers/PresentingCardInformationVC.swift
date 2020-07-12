@@ -25,7 +25,7 @@ class PresentCardInformationVC: UIViewController {
 
     lazy var cardImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .red
+        view.isHidden = true
         view.layer.shadowOffset = .init(width: 5, height: 3)
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 5
@@ -108,6 +108,10 @@ class PresentCardInformationVC: UIViewController {
         self.setValuesForGUI()
         self.setUpAddressLabel()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.animateSetCard()
+    }
 
     // MARK: - Constraints
     private func setupConstraints() {
@@ -171,8 +175,6 @@ class PresentCardInformationVC: UIViewController {
 
     // MARK: - Methods
     private func setUpAddressLabel() {
-        
-        print(self.card?.latitude)
         
         guard let longitude = self.card?.longitude,
             let latitude = self.card?.latitude,
@@ -259,4 +261,28 @@ class PresentCardInformationVC: UIViewController {
 // MARK: - extension ScrolViewDelegate
 extension PresentCardInformationVC: UIScrollViewDelegate {
 
+}
+
+//MARK: - Animations
+extension PresentCardInformationVC {
+
+    private func animateSetCard() {
+
+         let startOrigin = self.cardImageView.frame
+        var rightPosition = self.cardImageView.frame
+        rightPosition.origin.x += 250
+
+        UIView.animate(withDuration: 0.1,
+                       delay: 0,
+                       options: .curveEaseIn, animations: {
+            self.cardImageView.frame = rightPosition
+        }, completion: { _ in
+            self.cardImageView.isHidden = false
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           options: .curveEaseOut, animations: {
+                            self.cardImageView.frame = startOrigin
+            })
+        })
+    }
 }
