@@ -76,7 +76,7 @@ class PresentingCardView: UIView {
         let button = UIButton()
         button.backgroundColor = .green
         button.setTitle(NSLocalizedString("Share", comment: ""), for: .normal)
-        button.setTitleColor(.cyan, for: .normal)
+        button.setTitleColor(.systemIndigo, for: .normal)
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(self.shareCard),
