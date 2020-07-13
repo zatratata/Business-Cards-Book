@@ -14,6 +14,8 @@
 		A040A4BA24BA515600BDAFC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A040A4B924BA515600BDAFC3 /* Alamofire */; };
 		A040A4BC24BA521C00BDAFC3 /* YandexResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */; };
 		A040A4C024BBA51000BDAFC3 /* String+ Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4BF24BBA51000BDAFC3 /* String+ Ex.swift */; };
+		A040A4C224BC3D1F00BDAFC3 /* UIAlertController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4C124BC3D1F00BDAFC3 /* UIAlertController+Ex.swift */; };
+		A040A4C424BC4E8200BDAFC3 /* PresentingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040A4C324BC4E8200BDAFC3 /* PresentingCardView.swift */; };
 		A07A1EE424B711470057A62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A1EE324B711470057A62D /* AppDelegate.swift */; };
 		A07A1EED24B7114A0057A62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEC24B7114A0057A62D /* Assets.xcassets */; };
 		A07A1EF024B7114A0057A62D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07A1EEE24B7114A0057A62D /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 		A040A4B624BA50AC00BDAFC3 /* YandexGeocoderNetworking+ Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YandexGeocoderNetworking+ Ex.swift"; sourceTree = "<group>"; };
 		A040A4BB24BA521C00BDAFC3 /* YandexResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponseModel.swift; sourceTree = "<group>"; };
 		A040A4BF24BBA51000BDAFC3 /* String+ Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ Ex.swift"; sourceTree = "<group>"; };
+		A040A4C124BC3D1F00BDAFC3 /* UIAlertController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ex.swift"; sourceTree = "<group>"; };
+		A040A4C324BC4E8200BDAFC3 /* PresentingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCardView.swift; sourceTree = "<group>"; };
 		A07A1EE024B711470057A62D /* BusinessCardsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A1EE324B711470057A62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A07A1EEC24B7114A0057A62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,8 +229,8 @@
 		A092845C24B8D07600DFC06B /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				A092845D24B8D08E00DFC06B /* RatingView.swift */,
 				A092845F24B8D0DC00DFC06B /* ReusableLabel.swift */,
+				A040A4C324BC4E8200BDAFC3 /* PresentingCardView.swift */,
 				A092846124B8D12B00DFC06B /* BackgroundImageView.swift */,
 				A092846324B8D15B00DFC06B /* ShowRatingView.swift */,
 			);
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A092846924B8D25C00DFC06B /* CustomTextField.swift */,
+				A092845D24B8D08E00DFC06B /* RatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				A092846C24B8D2A200DFC06B /* TextField+Ex.swift */,
 				A092847924B8F67F00DFC06B /* UIImage+Ex.swift */,
 				A040A4BF24BBA51000BDAFC3 /* String+ Ex.swift */,
+				A040A4C124BC3D1F00BDAFC3 /* UIAlertController+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +382,8 @@
 				A092846A24B8D25C00DFC06B /* CustomTextField.swift in Sources */,
 				A092846724B8D1E500DFC06B /* CreatingCardViewController.swift in Sources */,
 				A092845E24B8D08E00DFC06B /* RatingView.swift in Sources */,
+				A040A4C424BC4E8200BDAFC3 /* PresentingCardView.swift in Sources */,
+				A040A4C224BC3D1F00BDAFC3 /* UIAlertController+Ex.swift in Sources */,
 				A092847D24B9067800DFC06B /* MapViewController.swift in Sources */,
 				A092845024B8C5A500DFC06B /* CoreDataModel.xcdatamodeld in Sources */,
 				A07A1F1124B718130057A62D /* PocketCell.swift in Sources */,

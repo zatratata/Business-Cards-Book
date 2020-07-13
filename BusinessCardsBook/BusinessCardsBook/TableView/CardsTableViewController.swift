@@ -144,7 +144,8 @@ extension CardsTableViewController: UITableViewDelegate {
         if indexPath.row < self.filteredModel?.count ?? 0 {
             
             let nextViewController = PresentCardInformationVC()
-            nextViewController.card = self.filteredModel?[indexPath.row]
+            nextViewController.setModel(
+                withCard: self.filteredModel?[indexPath.row])
             
             nextViewController.modalTransitionStyle = .coverVertical
             nextViewController.modalPresentationStyle = .popover

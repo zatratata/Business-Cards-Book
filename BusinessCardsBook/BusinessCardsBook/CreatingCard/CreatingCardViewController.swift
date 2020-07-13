@@ -180,6 +180,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
         let alertAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""),
                                         style: .cancel, handler: nil)
         alert.addAction(alertAction)
+        alert.pruneNegativeWidthConstraints()
         self.present(alert, animated: true)
     }
 
@@ -243,6 +244,7 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
                                         self.showImagePicker(withSourceType: .photoLibrary)
         }
         alert.addAction(chooseFromLibraryAction)
+        alert.pruneNegativeWidthConstraints()
 
         alert.popoverPresentationController?.sourceView = self.cardImageView
         self.present(alert, animated: true, completion: nil)

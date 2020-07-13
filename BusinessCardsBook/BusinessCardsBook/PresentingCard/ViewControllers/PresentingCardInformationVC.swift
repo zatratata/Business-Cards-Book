@@ -9,171 +9,56 @@
 import SnapKit
 import UIKit
 
+protocol PresentingCardDelegate: class {
+    
+    func showAddressOnMap()
+    func callNumber()
+    func openWebSite()
+    func shareCard()
+    
+}
+
 class PresentCardInformationVC: UIViewController {
-
-    var card: CardModel?
-
+    
+    private var card: CardModel?
+    private var appearsCounter: Int = 0
+    
     // MARK: GUI
-    private lazy var backgroundImageView = BackgroundImageView()
-
-    private lazy var scrollView: UIScrollView = {
-        let scroll = UIScrollView(frame: .zero)
-        scroll.delegate = self
-
-        return scroll
-    }()
-
-    lazy var cardImageView: UIImageView = {
-        let view = UIImageView()
-        view.isHidden = true
-        view.layer.shadowOffset = .init(width: 5, height: 3)
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 5
-
+    
+    private lazy var mainView: PresentingCardView = {
+        let view = PresentingCardView()
+        view.delegate = self
+        
         return view
     }()
-
-    private lazy var nameLabel: ReusableLable = ReusableLable()
-
-    private lazy var phoneNumberLabel: ReusableLable = {
-        let label = ReusableLable()
-        label.textColor = .blue
-
-        label.isUserInteractionEnabled = true
-        let gest = UITapGestureRecognizer(target: self, action: #selector(self.callNumber))
-        label.addGestureRecognizer(gest)
-
-        return label
-    }()
-
-    private lazy var webSiteLabel: ReusableLable = {
-        let label = ReusableLable()
-        label.textColor = .blue
-
-        label.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self,
-                                             action: #selector(self.openWebSite))
-        label.addGestureRecognizer(gesture)
-
-        return label
-    }()
-
-    private lazy var addressLabel: ReusableLable = {
-        let label = ReusableLable()
-        label.numberOfLines = 0
-
-        return label
-    }()
-
-    private lazy var descriptionLabel: ReusableLable = {
-        let label = ReusableLable()
-        label.numberOfLines = 0
-
-        return label
-    }()
-
-    private var ratingFromPreviousUserView: ShowRatingView = ShowRatingView()
-
-    private lazy var shareButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .green
-        button.setTitle(NSLocalizedString("Share", comment: ""), for: .normal)
-        button.setTitleColor(.cyan, for: .normal)
-        button.layer.cornerRadius = 30
-        button.clipsToBounds = true
-        button.addTarget(self, action: #selector(self.shareCard),
-                         for: .touchUpInside)
-
-        return button
-    }()
-
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(self.mainView)
+        self.mainView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
 
-        self.view.addSubview(self.backgroundImageView)
-        self.backgroundImageView.contentMode = .scaleAspectFill
-
-        self.view.addSubview(self.scrollView)
-        self.scrollView.addSubview(self.cardImageView)
-        self.scrollView.addSubview(self.nameLabel)
-        self.scrollView.addSubview(self.phoneNumberLabel)
-        self.scrollView.addSubview(self.addressLabel)
-        self.scrollView.addSubview(self.webSiteLabel)
-        self.scrollView.addSubview(self.descriptionLabel)
-        self.scrollView.addSubview(self.ratingFromPreviousUserView)
-        self.scrollView.addSubview(self.shareButton)
-
-        self.setupConstraints()
         self.setValuesForGUI()
         self.setUpAddressLabel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.animateSetCard()
+        
+        if self.appearsCounter == 0 {
+            self.mainView.animateSetCard()
+        }
+        self.appearsCounter += 1
     }
-
-    // MARK: - Constraints
-    private func setupConstraints() {
-        self.scrollView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-
-        self.backgroundImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-
-        self.cardImageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().inset(80)
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(UIScreen.main.bounds.width * 0.42)
-        }
-
-        self.nameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.cardImageView.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-        }
-
-        self.phoneNumberLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.nameLabel.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-        }
-
-        self.webSiteLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.phoneNumberLabel.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-        }
-
-        self.addressLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.webSiteLabel.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-            make.left.right.equalToSuperview().inset(20)
-        }
-
-        self.descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.addressLabel.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-            make.left.right.equalToSuperview().inset(20)
-        }
-
-        self.ratingFromPreviousUserView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.descriptionLabel.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(20)
-            make.width.equalTo(120)
-        }
-
-        self.shareButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.ratingFromPreviousUserView.snp.bottom).offset(30)
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.6)
-            make.height.equalTo(60)
-            make.bottom.equalToSuperview().offset(-10)
-        }
-    }
-
+    
     // MARK: - Methods
+    func setModel(withCard card: CardModel?) {
+        self.card = card
+        self.appearsCounter = 0
+    }
+    
     private func setUpAddressLabel() {
         
         guard let longitude = self.card?.longitude,
@@ -183,11 +68,7 @@ class PresentCardInformationVC: UIViewController {
                 return
         }
         
-        self.addressLabel.textColor = .blue
-        self.addressLabel.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self,
-                                             action: #selector(self.showAddressOnMap))
-        self.addressLabel.addGestureRecognizer(gesture)
+        self.mainView.setUpAddressLabel()
     }
     
     private func setValuesForGUI() {
@@ -195,59 +76,62 @@ class PresentCardInformationVC: UIViewController {
         
         //Change a date of last using for current card
         CoreDataManager.shared.changeDateOfLastUsingInContextData(forCardId: card.cardID, with: Date())
-
-        self.cardImageView.image = self.card?.getImage()
-        self.nameLabel.text = card.name
-        self.phoneNumberLabel.text = card.phoneNumber
-        self.addressLabel.text = card.adress
-        self.webSiteLabel.text = card.webSite?.absoluteString
-        self.descriptionLabel.text = card.description
-        self.ratingFromPreviousUserView.rating = Int(card.userServiceEvaluation ?? 0)
-    }
-
-    // MARK: - Actions
-    @objc private func showAddressOnMap() {
-        let nextVC = MapViewController()
         
-        guard let longitude = self.card?.longitude,
-                  let latitude = self.card?.latitude else {
-                      return
-              }
-        
-        nextVC.setVariables(cardName: self.card?.name,
-                            address: self.card?.adress,
-                            coordinate: (latitude, longitude))
-        self.modalPresentationStyle = .popover
-        self.modalTransitionStyle = .coverVertical
-        self.present(nextVC, animated: true, completion: nil)
+        self.mainView.setValuesForGUI(image: self.card?.getImage(),
+                                      name: card.name,
+                                      phone: card.phoneNumber,
+                                      address: card.adress,
+                                      webSite: card.webSite?.absoluteString,
+                                      description: card.description,
+                                      rating: Int(card.userServiceEvaluation ?? 0))
     }
+}
+
+//MARK: - Extension + PresentCardDelegate
+extension PresentCardInformationVC: PresentingCardDelegate {
     
-    @objc private func callNumber() {
-
-        guard let number = self.phoneNumberLabel.text,
+    func showAddressOnMap() {
+           let nextVC = MapViewController()
+           
+           guard let longitude = self.card?.longitude,
+               let latitude = self.card?.latitude else {
+                   return
+           }
+           
+           nextVC.setVariables(cardName: self.card?.name,
+                               address: self.card?.adress,
+                               coordinate: (latitude, longitude))
+           self.modalPresentationStyle = .popover
+           self.modalTransitionStyle = .coverVertical
+           self.present(nextVC, animated: true, completion: nil)
+       }
+    
+    func callNumber() {
+        
+        guard let number = self.card?.phoneNumber,
             let url = URL(string: "telprompt://\(number)") else { return }
-
+        
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url,
                                       options: [:],
                                       completionHandler: nil)
         }
     }
-
-    @objc private func openWebSite() {
-
-        guard let siteString = self.webSiteLabel.text else { return }
+    
+    func openWebSite() {
+        
+        guard let siteString = self.card?.webSite?.absoluteString else { return }
         let url = URL(string: "http://" + siteString)
         if let url = url {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-
-    @objc private func shareCard() {
-
+    
+    func shareCard() {
+        
         guard let card = self.card,
             let url = card.exportToURL() else { return }
-
+        
         let activity = UIActivityViewController(
             activityItems: [url],
             applicationActivities: nil
@@ -256,31 +140,3 @@ class PresentCardInformationVC: UIViewController {
     }
 }
 
-// MARK: - extension ScrolViewDelegate
-extension PresentCardInformationVC: UIScrollViewDelegate {
-
-}
-
-//MARK: - Animations
-extension PresentCardInformationVC {
-
-    private func animateSetCard() {
-
-         let startOrigin = self.cardImageView.frame
-        var rightPosition = self.cardImageView.frame
-        rightPosition.origin.x += 250
-
-        UIView.animate(withDuration: 0.1,
-                       delay: 0,
-                       options: .curveEaseIn, animations: {
-            self.cardImageView.frame = rightPosition
-        }, completion: { _ in
-            self.cardImageView.isHidden = false
-            UIView.animate(withDuration: 0.5,
-                           delay: 0,
-                           options: .curveEaseOut, animations: {
-                            self.cardImageView.frame = startOrigin
-            })
-        })
-    }
-}

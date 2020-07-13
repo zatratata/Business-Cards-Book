@@ -248,6 +248,7 @@ class CreatingProfileViewController: UIViewController, UINavigationControllerDel
             let alertAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""),
                                             style: .cancel, handler: nil)
             alert.addAction(alertAction)
+            alert.pruneNegativeWidthConstraints()
             self.present(alert, animated: true)
 
             return
@@ -302,6 +303,7 @@ class CreatingProfileViewController: UIViewController, UINavigationControllerDel
                 self.showImagePicker(withSourceType: .photoLibrary)
         }
         alert.addAction(chooseFromLibraryAction)
+        alert.pruneNegativeWidthConstraints()
 
         alert.popoverPresentationController?.sourceView = self.userImage
         present(alert, animated: true, completion: nil)
