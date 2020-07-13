@@ -169,6 +169,10 @@ extension CardsTableViewController: CardsTableViewControllerDelegate {
             self.cardsModel = []
         }
         self.cardsModel?.insert(card, at: 0)
+        
+        //presentation part
+        self.setSoloduha()
+        
         self.filteredModel = self.cardsModel
         self.tableView.reloadData()
     }
@@ -189,7 +193,7 @@ extension CardsTableViewController: UISearchBarDelegate {
     }
 }
 
-//MARK: Addition for presentation
+//MARK: - Addition for presentation
 extension CardsTableViewController {
     @objc private func setMoloauto() {
 
@@ -213,5 +217,26 @@ extension CardsTableViewController {
         self.cardsModel?.insert(card, at: 0)
         self.filteredModel = self.cardsModel
         self.tableView.reloadData()
+    }
+    
+    private func setSoloduha() {
+        var card: CardModel = CardModel(
+            cardImage: nil,
+            name: "Soloduha",
+            phoneNumber: "+3759379992",
+            webSite: URL(string: "moloauto.by"),
+            adress: "Молодечно, ул. Будавников д. 15А",
+            latitude: 26.851587,
+            longitude: 54.296992,
+            description: "Самый популярный певец в мире",
+            cardID: UUID(),
+            dateOfLastUsing: Date(),
+            serviceEvaluationBySourceUser: 5,
+            userServiceEvaluation: 5,
+            averageServiceEvaluationInTheChain: 5)
+        
+        card.set(image: UIImage(named: "Soloduha"))
+        
+        self.cardsModel?.insert(card, at: 0)
     }
 }
