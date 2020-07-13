@@ -91,6 +91,11 @@ class CardsTableViewController: UIViewController {
             .add,
             target: self,
             action: #selector(pushCreatingCardViewController))
+        
+        self.navigationItem.leftBarButtonItem = .init(
+            barButtonSystemItem: .bookmarks,
+            target: self,
+            action: #selector(self.setMoloauto))
     }
     
     @objc private func pushCreatingCardViewController() {
@@ -180,6 +185,33 @@ extension CardsTableViewController: UISearchBarDelegate {
                 ($0.name.lowercased()).contains(searchText.lowercased())
             }
         }
+        self.tableView.reloadData()
+    }
+}
+
+//MARK: Addition for presentation
+extension CardsTableViewController {
+    @objc private func setMoloauto() {
+
+        var card: CardModel = CardModel(
+            cardImage: nil,
+            name: "Moloauto",
+            phoneNumber: "+3759379992",
+            webSite: URL(string: "moloauto.by"),
+            adress: "Молодечно, ул. Будавников д. 15А",
+            latitude: 26.851587,
+            longitude: 54.296992,
+            description: "Самые дешевые автозапчасти в городе",
+            cardID: UUID(),
+            dateOfLastUsing: Date(),
+            serviceEvaluationBySourceUser: 5,
+            userServiceEvaluation: 5,
+            averageServiceEvaluationInTheChain: 5)
+        
+        card.set(image: UIImage(named: "cardImage"))
+        
+        self.cardsModel?.insert(card, at: 0)
+        self.filteredModel = self.cardsModel
         self.tableView.reloadData()
     }
 }

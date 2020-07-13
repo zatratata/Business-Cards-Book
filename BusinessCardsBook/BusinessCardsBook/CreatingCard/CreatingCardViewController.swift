@@ -203,6 +203,8 @@ class CreatingCardViewController: UIViewController, UINavigationControllerDelega
             }
         }
         
+        print(self.coordinates)
+        
         var url: URL?
         if let stringURL = self.webSiteTextField.text {
             url = URL(string: stringURL)

@@ -35,7 +35,7 @@ class PresentingCardView: UIView {
 
     private lazy var phoneNumberLabel: ReusableLable = {
         let label = ReusableLable()
-        label.textColor = .blue
+        label.textColor = .systemBlue
 
         label.isUserInteractionEnabled = true
         let gest = UITapGestureRecognizer(target: self, action: #selector(self.callNumber))
@@ -46,7 +46,7 @@ class PresentingCardView: UIView {
 
     private lazy var webSiteLabel: ReusableLable = {
         let label = ReusableLable()
-        label.textColor = .blue
+        label.textColor = .systemBlue
 
         label.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self,
@@ -190,7 +190,7 @@ class PresentingCardView: UIView {
     
     func setUpAddressLabel() {
         
-        self.addressLabel.textColor = .blue
+        self.addressLabel.textColor = .systemBlue
         self.addressLabel.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(self.showAddressOnMap))
